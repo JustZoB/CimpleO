@@ -1,5 +1,331 @@
-$body-color: black;
+@font-face {
+    font-family: Russo_One;
+    src: url(fonts/Russo_One/RussoOne-Regular.ttf); 
+}
+@font-face {
+    font-family: Nunito;
+    src: url(fonts/Nunito/Nunito-Regular.ttf);
+}
 
-body {
-    background-color: $body-color;
+$background-color: black;
+$text-color: white;
+$yellow: #FFD600;
+$purple: #7031E7;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.site {
+    background-color: $background-color;
+    color: $text-color;
+    font-family: Nunito;
+  
+    h1, 
+    h2, 
+    h3, 
+    h4, 
+    h5, 
+    h6 {
+        font-weight: normal;
+        font-family: Russo_One;
+    }
+    h1 {
+        font-size: 64px;
+    }
+    h2 {
+        font-size: 48px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 20px;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+    a {
+        color: $text-color;
+        text-decoration: none;
+        
+        &:hover {
+            border-bottom: 1px solid $yellow;
+        }
+    }
+    
+    input, 
+    button {
+        color: $text-color;
+        background-color: $background-color;
+        border: 1px solid $yellow;
+        border-radius: 5px;
+    }
+
+    input[type="text"] {
+        font-size: 18px;
+        border: none;
+        border-bottom: 1px solid $purple;
+        border-radius: 0;
+        padding: 10px 0;
+
+        &:hover {
+            &::placeholder {
+                color: $text-color;
+            }
+        }
+    }
+    input[type="checkbox"] { 
+        
+    }
+    button {
+        font-size: 24px;
+        padding: 12px 24px;
+        cursor: pointer;
+    }
+    .small-hr {
+        margin: auto 0;
+        width: 78px;
+
+        hr {
+            border: 1px solid $yellow;
+        }
+    }
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    header, 
+    article, 
+    footer {
+        width: 1240px;
+    }
+    article {
+        margin: 100px 0;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+    
+        ul {
+            display: flex;
+            font-size: 20px;
+    
+            li {
+                margin: 20px;
+            }
+        }
+    }
+    
+    .poster {
+        text-align: center;
+        margin-top: 250px;
+        margin-bottom: 50px;
+        
+        .carousel {
+            margin-bottom: 60px;
+            section {
+                p {
+                    font-family: Russo_One;
+                    font-size: 64px;
+                    color: $background-color;
+                    text-shadow: $text-color 0 0 2px;
+                    margin: 10px 0;
+                }
+            }
+        }
+    
+        p {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        img {
+            cursor: pointer;
+            margin-bottom: 148px;
+        }
+
+        .carousel-buttons {
+            display: flex;
+            justify-content: center;
+
+            span {
+                margin: auto 0;
+                width: 30px;
+                margin: 0 5px;
+                cursor: pointer;
+
+                hr {
+                    border: 1px solid $text-color;
+                }
+            }
+
+            span.active {
+                hr {
+                    border: 1px solid $purple;
+                }
+            }
+        }
+    }
+    
+    .main {
+        &__head {
+            display: flex;
+    
+            h2 {
+                margin-left: 10px;
+            }
+        }
+    
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+    
+            section {
+                position: relative;
+                width: 295px;
+                height: 430px;
+                margin: 23px 7px; //23px 10px
+
+                &:hover {
+                    border: 1px solid $yellow;
+                    border-radius: 5px;
+                    margin: 22px 6px
+                }
+        
+                .head {
+                    display: flex;
+                    margin: 10px;
+    
+                    div {
+                        margin-left: 10px;
+                        width: 235px;
+    
+                        hr {
+                            border: 1px solid $yellow;
+                        }
+                    }
+                }
+                p {
+                    margin: 20px 10px;
+                    font-size: 22px;
+                }
+                .images {
+                    position: absolute;
+                    bottom: 0;
+                    img {
+                        margin: 0 2px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .hire {
+        text-align: center;
+    
+        &__head {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 57px;
+    
+            h2 {
+                margin: 0 25px;
+            }
+        }
+        &__text {
+            margin-bottom: 57px;
+            font-size: 20px;
+        }
+    }
+    
+    .contact-us {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 820px;
+    
+        &__head {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+    
+            h2 {
+                margin: 0 10px;
+            }
+        }
+    
+        &__form {
+    
+            .contact {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 60px;
+    
+                input {
+                    width: 400px;
+                }
+            }
+            .message {
+                width: 100%;
+                margin-bottom: 60px;
+            }
+        
+            .sending {
+                display: flex;
+                justify-content: space-between;
+    
+                &__checkboxes {
+                    display: flex;
+                    flex-direction: column;
+    
+                    div {
+                        margin-top: 10px;
+                    }
+    
+                    span {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    
+        
+    }
+    
+    .footer-menu {
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        margin-bottom: 70px;
+
+        ul {
+            li {
+                margin-bottom: 18px;
+            }
+        }
+        &__images {
+            div {
+                display: flex;
+                justify-content: space-between;
+                width: 420px;
+                margin-bottom: 23px;
+            }
+        }
+    }
+    
+    .footer {
+        display: flex;
+        font-size: 16px;
+        margin: 20px 0;
+    
+        img {
+            margin-right: 16px;
+        }
+    }
 }
