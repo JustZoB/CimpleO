@@ -18,19 +18,30 @@
                 <img src="img/logo.png" alt="Logo">
             </div>
             <nav class="menu">
-                <ul>
+                <input type="checkbox" id="menu__toggle">
+                <label class="menu__button" for="menu__toggle">
+                    <span></span>
+                </label>
+                <ul class="menu__list">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Blog</a></li>
                     <li>
-                        <a href="#">
-                            En
-                            <i class="fas fa-chevron-down fa-sm"></i>
-                        </a>
+                        <input type="checkbox" id="language__toggle">
+                        <label class="language__button" for="language__toggle">
+                            <a>
+                                En
+                                <i class="fas fa-chevron-down fa-sm"></i>
+                            </a>
+                        </label>
+                        <ul class="language__list">
+                            <li><a href="#">Rus</a></li>
+                            <li><a href="#">Jap</a></li>
+                        </ul>
                     </li>
-                    <li><a href="#" class="purple-border">Contact</a></li>
+                    <li class="button-purple"><button>Contact</button></li>
                 </ul>
             </nav>
         </header>
@@ -209,10 +220,20 @@
             </div>
             <div class="contact-us__form">
                 <div class="contact margin_element">
-                    <input type="text" placeholder="Your E-mail Address *">
-                    <input type="text" placeholder="Your Name *">
+                    <div class="form-group">
+                        <input class="form-input" type="text" id="form-email">
+                        <label for="form-email">Your E-mail Address *</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-input" type="text" id="form-name">
+                        <label for="form-name">Your Name *</label>
+                    </div>
                 </div>
-                <input class="message margin_element" type="text" placeholder="Your Message">
+                <div class="form-group margin_element">
+                    <input class="form-input message" type="text" id="form-text">
+                    <label for="form-text">Your Message</label>
+                </div>
+                
                 <div class="sending">
                     <div class="sending__checkboxes">
                         <div class="checkbox">

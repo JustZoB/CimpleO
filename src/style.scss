@@ -14,7 +14,7 @@ $purple: #7031E7;
 
 $screen_big: 1280px;
 $screen_medium: 792px;
-$screen_small: 400px;
+$screen_small: 375px;
 
 $article_margin_big: 100px;
 $article_margin_medium: 70px;
@@ -96,12 +96,6 @@ $line-size_small: 50px;
         border-bottom: 1px solid $purple;
         border-radius: 0;
         padding: 10px 0;
-
-        &:hover {
-            &::placeholder {
-                color: $text-color;
-            }
-        }
     }
     .checkbox {
         input[type="checkbox"] { 
@@ -143,17 +137,17 @@ $line-size_small: 50px;
             content: "\2713";
         }
     }
-
-    .purple-border {
-        padding: 10px;
-        border: 1px solid $purple;
-        border-radius: 5px;
-    }
+    
     button {
         font-size: 24px;
         padding: 12px 24px;
         white-space: nowrap;
         cursor: pointer;
+
+        &:hover {
+            transition-duration: 0.25s;
+            transform: translateY(-5px);
+        }
 
         @media screen and (max-width: $screen_medium) {
             font-size: 20px;
@@ -248,7 +242,7 @@ $line-size_small: 50px;
             width: $screen_medium - 24px;
         }
         @media screen and (max-width: $screen_medium) {
-            width: $screen_small - 24px;
+            width: $screen_small - 12px;
         }
     }
     article {
@@ -265,21 +259,153 @@ $line-size_small: 50px;
     .header {
         display: flex;
         justify-content: space-between;
+        background-color: $background-color;
         align-items: center;
         height: 100px;
-    
-        ul {
-            display: flex;
-            font-size: 20px;
-    
-            li {
-                margin: 20px;
+        z-index: 5;
 
-                @media screen and (max-width: $screen_big) {
-                    margin: 10px;
+        @media screen and (max-width: $screen_medium) {
+            position: fixed;
+        }
+
+        .menu {
+            #menu__toggle {
+                display: none;
+
+                &:checked ~ .menu__button > span {
+                    transform: rotate(45deg);
+                }
+                &:checked ~ .menu__button > span::before {
+                    top: 0;
+                    transform: rotate(0);
+                }
+                &:checked ~ .menu__button > span::after {
+                    top: 0;
+                    transform: rotate(90deg);
+                }
+                &:checked ~ .menu__list {
+                    display: flex;
+                    right: 0;
+                }
+            }
+
+            &__button {
+                display: none;
+                position: relative;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+                z-index: 7;
+
+                @media screen and (max-width: $screen_medium) {
+                    display: flex;
+                }
+
+                & > span,
+                & > span::before,
+                & > span::after {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    transition-duration: 0.25s;
+                    background-color: $text-color;
+                }
+                & > span::before {
+                    content: "";
+                    top: -10px;
+                }
+                & > span::after {
+                    content: "";
+                    top: 10px;
+                }
+            }
+
+            &__list {
+                display: flex;
+                font-size: 20px;
+                transition-duration: 0.25s;
+    
+                @media screen and (max-width: $screen_medium) {
+                    display: none;
+                    flex-direction: column;
+                    position: fixed;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    padding-top: 90px;
+                    right: -100%;
+                    z-index: 6;
+                    background-color: $background-color;
+                }
+        
+                li {
+                    margin: 20px;
+                    transition-duration: 0.25s;
+                    position: relative;
+    
+                    @media screen and (max-width: $screen_big) {
+                        margin: 10px;
+                    }
+                    @media screen and (max-width: $screen_medium) {
+                        margin: 0 0 30px 60px;
+                    }
+
+                    #language__toggle {
+                        display: none;
+    
+                        &:checked ~ .language__list {
+                            display: flex;
+                        }
+                    }
+                    .language__button {
+                        cursor: pointer;
+                    }
+                    .language__list {
+                        display: none;
+                        flex-direction: column;
+                        position: absolute;
+                        top: 35px;
+                        left: 0;
+    
+                        @media screen and (max-width: $screen_medium) {
+                            flex-direction: unset;
+                            top: 0;
+                            left: 55px;
+                        }
+    
+                        li {
+                            margin: 5px 10px 5px 0;
+    
+                            @media screen and (max-width: $screen_medium) {
+                                margin: 0 10px 0 0;
+                            }
+                        }
+                    }
+    
+                    &.button-purple {
+                        margin: 10px;
+    
+                        @media screen and (max-width: $screen_big) {
+                            margin: 0 10px;
+                        }
+                        @media screen and (max-width: $screen_medium) {
+                            margin: 0 0 30px 60px;
+                        }
+                
+                        button {
+                            font-size: 20px;
+                            padding: 10px;
+                            border: 1px solid $purple;
+                            border-radius: 5px;
+                        }
+                    }
                 }
             }
         }
+    
+        
     }
     
     .poster {
@@ -410,10 +536,10 @@ $line-size_small: 50px;
                     }
 
                     img {
-                        margin: 0 1px;
+                        margin: 0 2px 0 0;
 
                         @media screen and (max-width: $screen_big) {
-                            margin: 0 6px;
+                            margin: 0 11px 0 0;
                         }
                     }
                 }
@@ -480,10 +606,45 @@ $line-size_small: 50px;
         }
     
         &__form {
+            .form-group {
+                position: relative;
+                direction: rtl;
+
+                label {
+                    position: absolute;
+                    left: 0;
+                    top: 10px;
+                    color: rgba(255, 255, 255, 0.5);
+                    transition: transform 150ms ease-out, font-size 150ms ease-out;
+                    z-index: 1;
+
+                    &:hover {
+                        color: $text-color;
+                    }
+                }
+                input {
+                    position: relative;
+                    direction: ltr;
+
+                    &:focus + label {
+                        color: $text-color;
+                    }
+                }
+            }
+
+            .focused label {
+                transform: translateY(-160%);
+                font-size: 14px;
+
+                &:hover {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+            }
+
             .contact {
                 display: flex;
                 justify-content: space-between;
-    
+
                 input {
                     width: 400px;
 
@@ -495,6 +656,7 @@ $line-size_small: 50px;
                     }
                 }
             }
+
             .message {
                 width: 100%;
             }
@@ -506,9 +668,23 @@ $line-size_small: 50px;
                 &__checkboxes {
                     display: flex;
                     flex-direction: column;
+
+                    @media screen and (max-width: $screen_medium) {
+                        width: 230px;
+                    }
     
                     div {
                         margin-top: 10px;
+                    }
+                }
+
+                button {
+                    width: 104px;
+                    height: 57px;
+
+                    @media screen and (max-width: $screen_medium) {
+                        width: 90px;
+                        height: 47px;
                     }
                 }
             }
@@ -606,7 +782,7 @@ $line-size_small: 50px;
                 }
 
                 @media screen and (max-width: $screen_medium) {
-                    width: ($screen_small - 25px) / 2 - 10px;
+                    width: ($screen_small - 25px) / 2;
                     margin-bottom: 50px;
 
                     img {
@@ -636,7 +812,7 @@ $line-size_small: 50px;
                 margin-right: 14px;
             }
             @media screen and (max-width: $screen_medium) {
-                margin-right: 10px;
+                margin-right: 7px;
             }
         }
     }
