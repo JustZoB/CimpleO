@@ -24,8 +24,13 @@
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">En</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li>
+                        <a href="#">
+                            En
+                            <i class="fas fa-chevron-down fa-sm"></i>
+                        </a>
+                    </li>
+                    <li><a href="#" class="purple-border">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -52,11 +57,8 @@
             </div>
         </article>
         <article class="main">
-            <div class="main__head">
-                <div class="small-hr">
-                    <hr>
-                </div>
-                <h2>What We Do</h2>
+            <div class="head">
+                <h2 class="head__lines-1">What We Do</h2>
             </div>
             <div class="sections">
                 <section>
@@ -64,7 +66,6 @@
                         <img src="img/main/code.png" alt="Code">
                         <div>
                             <h3>Fullstack Development</h3>
-                            <hr />
                         </div>
                     </div>
                     <p>Our web technology stack includes all the latest industry standard technologies that enable lean and agile development for the development of complex web applications for clients ranging from large enterprises to startups, across the globe.</p>
@@ -82,7 +83,6 @@
                         <img src="img/main/cubes.png" alt="Cubes">
                         <div>
                             <h3>CMS Development</h3>
-                            <hr />
                         </div>
                     </div>
                     <p>Our development team delivers the superior digital experience with the industry-leading web content management systems using process-driven SDLC, highest engineering standards & best practices ensuring the best quality.</p>
@@ -97,7 +97,6 @@
                         <img src="img/main/credit-card.png" alt="Credit card">
                         <div>
                             <h3>eCommerce</h3>
-                            <hr />
                         </div>
                     </div>
                     <p>From small online stores to large multi-vendor websites, all our ecommerce projects are designed and developed with great attention to details to ensure our customers ultimate satisfaction.</p>
@@ -114,7 +113,6 @@
                         <img src="img/main/pen.png" alt="Pen">
                         <div>
                             <h3>Responsive Design</h3>
-                            <hr />
                         </div>
                     </div>
                     <p>We offer the excellent Responsive web design services making the website effective and easy to use on any device.</p>
@@ -129,7 +127,6 @@
                         <img src="img/main/mobile.png" alt="Mobile">
                         <div>
                             <h3>Hybrid Mobile Apps</h3>
-                            <hr />
                         </div>
                     </div>
                     <p>Our expertise in Hybrid and cross-platform app development across different industries helps us to build customer-oriented solutions in a lesser time frame which contributes to your success.</p>
@@ -147,7 +144,6 @@
                         <img src="img/main/microchip.png" alt="Microchip">
                         <div>
                             <h3>Embedded & IoT</h3>
-                            <hr />
                         </div>
                     </div>
                     <p>Looking to launch a new IoT project to the market? We provide IoT software development, prototyping and commercial scale-up services for your projects. LoraWAN, nRF, MQTT, MESH-networking Computer Vision, Industrial Monitoring.</p>
@@ -165,7 +161,6 @@
                         <img src="img/main/server.png" alt="Server">
                         <div>
                             <h3>DevOps</h3>
-                            <hr />
                         </div>
                     </div>
                     <p>Our team of DevOps and managed services experts help our clients effectively manage their entire IT operations. We help them reduce their costs by providing highly trained IT resources who can make an immediate impact on their business.</p>
@@ -182,7 +177,6 @@
                         <img src="img/main/database.png" alt="Database">
                         <div>
                             <h3>Database & API</h3>
-                            <hr />
                         </div>
                     </div>
                     <p>SQL: MySQL, PerconaDB, PostgreSQL</p>
@@ -199,16 +193,10 @@
             </div>
         </article>
         <article class="hire">
-            <div class="hire__head">
-                <div class="small-hr">
-                    <hr>
-                </div>
-                <h2>We Are CimpleO</h2>
-                <div class="small-hr">
-                    <hr>
-                </div>
+            <div class="head margin_element">
+                <h2 class="head__lines-2">We Are CimpleO</h2>
             </div>
-            <div class="hire__text">
+            <div class="hire__text margin_element">
                 <p>Award Winning Digital Agency who deliver on-time and under-budget. Guaranteed.</p>
                 <p>We design and develop elegant web, mobile and IoT solutions that are made to scale.</p>
                 <p>We would like to discuss the way we could bring you best experience and reduce future maintenance bills.</p>
@@ -216,30 +204,24 @@
             <button>Hire Us</button>
         </article>
         <article class="contact-us">
-            <div class="contact-us__head">
-                <div class="small-hr">
-                    <hr>
-                </div>
-                <h2>Contact Us</h2>
-                <div class="small-hr">
-                    <hr>
-                </div>
+            <div class="head margin_element">
+                <h2 class="head__lines-2">Contact Us</h2>
             </div>
             <div class="contact-us__form">
-                <div class="contact">
+                <div class="contact margin_element">
                     <input type="text" placeholder="Your E-mail Address *">
                     <input type="text" placeholder="Your Name *">
                 </div>
-                <input class="message" type="text" placeholder="Your Message">
+                <input class="message margin_element" type="text" placeholder="Your Message">
                 <div class="sending">
                     <div class="sending__checkboxes">
-                        <div>
-                            <input type="checkbox">
-                            <span>I've read and accepted the Terms & Conditions</span>
+                        <div class="checkbox">
+                            <input type="checkbox" id="checkbox_terms">
+                            <label for="checkbox_terms">I've read and accepted the Terms & Conditions</label>
                         </div>
-                        <div>
-                            <input type="checkbox">
-                            <span>I agree to the Privacy Policy and Information Governance Policy</span>
+                        <div class="checkbox">
+                            <input type="checkbox" id="checkbox_privacy">
+                            <label for="checkbox_privacy">I agree to the Privacy Policy and Information Governance Policy</label>
                         </div>
                     </div>
                     <button>Send</button>
@@ -247,61 +229,65 @@
             </div>
         </article>
         <article class="footer-menu">
-            <div>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contacts</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
+            <div class="lists">
+                <div class="nav">
+                    <div class="menu">
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contacts</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="contacts">
+                        <ul>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="#">hello@cimpleo.com</a>
+                            </li>
+                            <li>
+                                <i class="fab fa-telegram"></i>
+                                <a href="#">Telegram</a>
+                            </li>
+                            <li>
+                                <i class="fab fa-whatsapp"></i>
+                                <a href="#">WhatsApp</a>
+                            </li>
+                            <li>
+                                <i class="fab fa-skype"></i>
+                                <a href="#">Skype</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <a href="#">+7(3812)35-37-81</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-home"></i>
+                                <a href="#">Russia, Omsk, Marksa 41 / 100</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li>
+                            <i class="fab fa-instagram"></i>
+                            <a href="#">Instagram</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-vk"></i>
+                            <a href="#">Vkontakte</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-facebook-square"></i>
+                            <a href="#">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <ul>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="#">hello@cimpleo.com</a>
-                    </li>
-                    <li>
-                        <i class="fab fa-telegram"></i>
-                        <a href="#">Telegram</a>
-                    </li>
-                    <li>
-                        <i class="fab fa-whatsapp"></i>
-                        <a href="#">WhatsApp</a>
-                    </li>
-                    <li>
-                        <i class="fab fa-skype"></i>
-                        <a href="#">Skype</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone"></i>
-                        <a href="#">+7(3812)35-37-81</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-home"></i>
-                        <a href="#">Russia,Omsk, Marksa 41 / 100</a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <ul>
-                    <li>
-                        <i class="fab fa-instagram"></i>
-                        <a href="#">Instagram</a>
-                    </li>
-                    <li>
-                        <i class="fab fa-vk"></i>
-                        <a href="#">Vkontakte</a>
-                    </li>
-                    <li>
-                        <i class="fab fa-facebook-square"></i>
-                        <a href="#">Facebook</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-menu__images">
+            <div class="images">
                 <div>
                     <img src="img/footer-menu/1.png">
                     <img src="img/footer-menu/2.png">
