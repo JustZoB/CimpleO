@@ -46,9 +46,11 @@ $line-size_small: 50px;
         font-weight: normal;
         font-family: Russo_One;
     }
+
     h1 {
         font-size: 64px;
     }
+
     h2 {
         font-size: 48px;
 
@@ -56,9 +58,11 @@ $line-size_small: 50px;
             font-size: 30px;
         }
     }
+
     h3 {
         font-size: 20px;
     }
+
     p {
         font-size: 20px;
 
@@ -73,6 +77,7 @@ $line-size_small: 50px;
     ul {
         list-style-type: none;
     }
+
     a {
         color: $text-color;
         text-decoration: none;
@@ -98,10 +103,12 @@ $line-size_small: 50px;
         border-radius: 0;
         padding: 10px 0;
     }
+    
     .checkbox {
         input[type="checkbox"] { 
             display: none;
         }
+
         label {
             font-size: 16px;
             position: relative;
@@ -144,10 +151,12 @@ $line-size_small: 50px;
                 }
             }
         }
+
         input:checked + label:before {
             content: "\2713";
         }
     }
+
     .double-string {
         @media screen and (max-width: $screen_medium) {
             display: flex;
@@ -162,14 +171,14 @@ $line-size_small: 50px;
         white-space: nowrap;
         cursor: pointer;
 
-        &:hover {
-            transition-duration: 0.25s;
-            transform: translateY(-5px);
-        }
-
         @media screen and (max-width: $screen_medium) {
             font-size: 20px;
             padding: 10px 20px;
+        }
+
+        &:hover {
+            transition-duration: 0.25s;
+            transform: translateY(-5px);
         }
     }
     .margin_element {
@@ -293,14 +302,17 @@ $line-size_small: 50px;
                 &:checked ~ .menu__button > span {
                     transform: rotate(45deg);
                 }
+
                 &:checked ~ .menu__button > span::before {
                     top: 0;
                     transform: rotate(0);
                 }
+
                 &:checked ~ .menu__button > span::after {
                     top: 0;
                     transform: rotate(90deg);
                 }
+
                 &:checked ~ .menu__list {
                     display: flex;
                     right: 0;
@@ -330,10 +342,12 @@ $line-size_small: 50px;
                     transition-duration: 0.25s;
                     background-color: $text-color;
                 }
+
                 & > span::before {
                     content: "";
                     top: -10px;
                 }
+
                 & > span::after {
                     content: "";
                     top: 10px;
@@ -377,9 +391,11 @@ $line-size_small: 50px;
                             display: flex;
                         }
                     }
+
                     .language__button {
                         cursor: pointer;
                     }
+
                     .language__list {
                         display: none;
                         flex-direction: column;
@@ -422,8 +438,6 @@ $line-size_small: 50px;
                 }
             }
         }
-    
-        
     }
     
     .poster {
@@ -496,8 +510,6 @@ $line-size_small: 50px;
                         }
                     }
                 }
-
-                
             }
         }
     
@@ -552,7 +564,7 @@ $line-size_small: 50px;
                 width: 275px;
                 height: 410px;
                 padding: 10px;
-                margin: 23px 7px; //23px 10px
+                margin: 23px 7px;
 
                 @media screen and (max-width: $screen_big) {
                     width: ($screen_medium - 24px) / 2 - 34px;
@@ -576,12 +588,12 @@ $line-size_small: 50px;
                         width: 235px;
                         border-bottom: 1px solid $yellow;
 
-                        h3 {
-                            padding-bottom: 3px;
-                        }
-
                         @media screen and (max-width: $screen_big) {
                             width: 100%;
+                        }
+
+                        h3 {
+                            padding-bottom: 3px;
                         }
                     }
                 }
@@ -644,9 +656,11 @@ $line-size_small: 50px;
                 }
             }
         }
+
         &__text {
             text-align: center;
         }
+
         button {
             width: 128px;
             margin: auto;
@@ -692,6 +706,7 @@ $line-size_small: 50px;
                         color: $text-color;
                     }
                 }
+
                 input {
                     position: relative;
                     direction: ltr;
@@ -755,8 +770,6 @@ $line-size_small: 50px;
                 }
             }
         }
-    
-        
     }
     
     .footer-menu {
@@ -815,6 +828,7 @@ $line-size_small: 50px;
                         margin-right: 70px;
                     }
                 }
+
                 .contacts {
                     li:last-child {
                         display: flex;
@@ -826,7 +840,6 @@ $line-size_small: 50px;
                                 transform: translatey(-10px);
                             }
                         }
-                        
 
                         a {
                             margin-left: 4px;
