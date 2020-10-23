@@ -47,25 +47,39 @@
         </header>
         <article class="poster">
             <div class="carousel">
-                <section></section>
-                <section></section>
-                <section>
-                    <p>We are CimpleO</p>
-                    <p>We develop software</p>
-                    <p>We do it well</p>
-                </section>
-                <section></section>
-                <section></section>
+                <div class="carousel__wrap">
+                    <div class="carousel__wrap__elements">
+                        <div class="carousel__item">
+                            <p>We are CimpleO</p>
+                            <p>We develop software</p>
+                            <p>We do it well</p>
+                        </div>
+                        <div class="carousel__item">
+                            <p>Fullstack</p>
+                            <p>CMS Development</p>
+                            <p>JAMStack</p>
+                        </div>
+                        <div class="carousel__item">
+                            <p>We are CimpleO</p>
+                            <p>We develop software</p>
+                            <p>We do it well</p>
+                        </div>
+                        <div class="carousel__item">
+                            <p>Fullstack</p>
+                            <p>CMS Development</p>
+                            <p>JAMStack</p>
+                        </div>
+                        <div class="carousel__item">
+                            <p>We are CimpleO</p>
+                            <p>We develop software</p>
+                            <p>We do it well</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <p>Let’s meet</p>
             <img src="img/down.png" alt="Down">
-            <div class="carousel-buttons">
-                <span><hr></span>
-                <span><hr></span>
-                <span class="active"><hr></span>
-                <span><hr></span>
-                <span><hr></span>
-            </div>
+            <div class="carousel__buttons"></div>
         </article>
         <article class="main">
             <div class="head">
@@ -238,11 +252,21 @@
                     <div class="sending__checkboxes">
                         <div class="checkbox">
                             <input type="checkbox" id="checkbox_terms">
-                            <label for="checkbox_terms">I've read and accepted the Terms & Conditions</label>
+                            <label for="checkbox_terms">
+                                <div class="double-string">
+                                    <span>I've read and accepted the</span> 
+                                    <span>Terms & Conditions</span>
+                                </div>
+                            </label>
                         </div>
                         <div class="checkbox">
                             <input type="checkbox" id="checkbox_privacy">
-                            <label for="checkbox_privacy">I agree to the Privacy Policy and Information Governance Policy</label>
+                            <label for="checkbox_privacy">
+                                <div class="double-string">
+                                    <span>I agree to the Privacy Policy and</span> 
+                                    <span>Information Governance Policy</span>
+                                </div>
+                            </label>
                         </div>
                     </div>
                     <button>Send</button>
@@ -286,7 +310,7 @@
                             </li>
                             <li>
                                 <i class="fas fa-home"></i>
-                                <a href="#">Russia, Omsk, Marksa 41 / 100</a>
+                                <a class="double-string" href="#"><span>Russia, Omsk,</span> <span>Marksa 41 / 100<span></a>
                             </li>
                         </ul>
                     </div>

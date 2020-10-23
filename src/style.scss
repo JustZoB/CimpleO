@@ -93,6 +93,7 @@ $line-size_small: 50px;
     input[type="text"] {
         font-size: 18px;
         border: none;
+        outline: none;
         border-bottom: 1px solid $purple;
         border-radius: 0;
         padding: 10px 0;
@@ -103,12 +104,14 @@ $line-size_small: 50px;
         }
         label {
             font-size: 16px;
+            position: relative;
 
             @media screen and (max-width: $screen_medium) {
                 font-size: 12px;
             }
 
             &::before {
+                position: absolute;
                 $checkbox-size: 20px;
                 content: "";
                 display: inline-block;
@@ -132,9 +135,24 @@ $line-size_small: 50px;
                     line-height: $checkbox-size__small + 1px;
                 }
             }
+
+            div {
+                margin-left: 33px;
+
+                @media screen and (max-width: $screen_medium) {
+                    margin-left: 25px;
+                }
+            }
         }
         input:checked + label:before {
             content: "\2713";
+        }
+    }
+    .double-string {
+        @media screen and (max-width: $screen_medium) {
+            display: flex;
+            flex-direction: column;
+            transform: translatey(-6px);
         }
     }
     
@@ -412,24 +430,74 @@ $line-size_small: 50px;
         text-align: center;
         margin-top: 250px;
         margin-bottom: 50px;
+
+        @media screen and (max-width: $screen_big) {
+            margin-top: 220px;
+        }
+        @media screen and (max-width: $screen_medium) {
+            margin-top: 220px;
+        }
+
+        $carousel_width_big: $screen_big - 40px;
+        $carousel_width_medium: $screen_medium - 24px;
+        $carousel_width_small: $screen_small - 12px;
         
         .carousel {
             margin-bottom: 60px;
-            section {
-                p {
-                    font-family: Russo_One;
-                    font-size: 64px;
-                    color: $background-color;
-                    text-shadow: $text-color 0 0 2px;
-                    margin: 10px 0;
 
-                    @media screen and (max-width: $screen_big) {
-                        font-size: 46px;
-                    }
-                    @media screen and (max-width: $screen_medium) {
-                        font-size: 30px;
+            @media screen and (max-width: $screen_big) {
+                margin-top: 80px;
+            }
+            @media screen and (max-width: $screen_medium) {
+                margin-bottom: 100px;
+            }
+
+            &__wrap {
+                position: relative;
+                overflow: hidden;
+                width: $carousel_width_big;
+
+                @media screen and (max-width: $screen_big) {
+                    width: $carousel_width_medium;
+                }
+                @media screen and (max-width: $screen_medium) {
+                    width: $carousel_width_small;
+                }
+
+                &__elements {
+                    display: flex;
+
+                    div {
+                        min-width: $carousel_width_big;
+
+                        @media screen and (max-width: $screen_big) {
+                            min-width: $carousel_width_medium;
+                        }
+                        @media screen and (max-width: $screen_medium) {
+                            min-width:$carousel_width_small;
+                        }
+
+                        p {
+                            font-family: Russo_One;
+                            font-size: 64px;
+                            margin: 10px 0;
+        
+                            @supports (-webkit-text-stroke: 1px $text-color) {
+                                color: transparent;
+                                -webkit-text-stroke: 1px $text-color;
+                            }
+        
+                            @media screen and (max-width: $screen_big) {
+                                font-size: 46px;
+                            }
+                            @media screen and (max-width: $screen_medium) {
+                                font-size: 30px;
+                            }
+                        }
                     }
                 }
+
+                
             }
         }
     
@@ -446,10 +514,17 @@ $line-size_small: 50px;
         }
         img {
             cursor: pointer;
-            margin-bottom: 148px;
+            margin-bottom: 140px;
+
+            @media screen and (max-width: $screen_big) {
+                margin-bottom: 120px;
+            }
+            @media screen and (max-width: $screen_medium) {
+                margin-bottom: 100px;
+            }
         }
 
-        .carousel-buttons {
+        .carousel__buttons {
             display: flex;
             justify-content: center;
 
@@ -458,16 +533,11 @@ $line-size_small: 50px;
                 width: 30px;
                 margin: 0 5px;
                 cursor: pointer;
-
-                hr {
-                    border: 1px solid $text-color;
-                }
+                border-bottom: 2px solid $text-color;
             }
 
             span.active {
-                hr {
-                    border: 1px solid $purple;
-                }
+                border-bottom: 2px solid $purple;
             }
         }
     }
@@ -668,12 +738,8 @@ $line-size_small: 50px;
                 &__checkboxes {
                     display: flex;
                     flex-direction: column;
-
-                    @media screen and (max-width: $screen_medium) {
-                        width: 230px;
-                    }
     
-                    div {
+                    .checkbox {
                         margin-top: 10px;
                     }
                 }
@@ -712,6 +778,10 @@ $line-size_small: 50px;
             li {
                 white-space: nowrap;
                 margin-bottom: 18px;
+
+                i {
+                    margin-right: 5px;
+                }
             }
         }
 
@@ -747,8 +817,24 @@ $line-size_small: 50px;
                 }
                 .contacts {
                     li:last-child {
+                        display: flex;
+
+                        @media screen and (max-width: $screen_medium) {
+                            margin-top: 22px;
+
+                            .double-string {
+                                transform: translatey(-10px);
+                            }
+                        }
+                        
+
                         a {
-                            max-width: 117px;
+                            margin-left: 4px;
+                            border-bottom: 1px solid transparent;
+
+                            &:hover {
+                                border-bottom: 1px solid $yellow;
+                            }
                         }
                     }
                 }
